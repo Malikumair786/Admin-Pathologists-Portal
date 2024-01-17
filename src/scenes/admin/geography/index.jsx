@@ -37,7 +37,7 @@ const Geography = () => {
 
         setLoading(false);
       } catch (error) {
-        setError("Error loading data");
+        setError("Error loading data",error);
         setLoading(false);
       }
     };

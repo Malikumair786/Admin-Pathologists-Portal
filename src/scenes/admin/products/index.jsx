@@ -91,20 +91,6 @@ const Products = () => {
   // const { data, isLoading, error } = useGetProductsQuery();
   const isNonMobile = useMediaQuery("(min-width: 1000px)");
 
-
-//********************for cross checking the errors********************
-  // if (error) {
-  //   console.error("Error fetching data:", error);
-  //   return <>Error fetching data</>; // Display an error message to the user
-  // }
-
-  // console.log("data:", data);
-  // console.log("isLoading:", isLoading);
-
-
-
-  
-
   return (
     <Box m="1.5rem 2.5rem">
       <Header title="PRODUCTS" subtitle="See your list of products." />

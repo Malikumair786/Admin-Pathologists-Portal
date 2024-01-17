@@ -21,7 +21,9 @@ const Dashboard = () => {
 
   const fetchAppointments = async () => {
     try {
-      const response = await axios.get("http://localhost:8081/payments/total-scuuessful-appointments");
+      const response = await axios.get(
+        "http://localhost:8081/payments/total-scuuessful-appointments"
+        );
       setAppointments(response.data);
     } catch (error) {
       console.error("Error fetching appointments:", error);
@@ -31,29 +33,14 @@ const Dashboard = () => {
   const fetchTodaySales = async () => {
     try {
       const response = await axios.get(
-    
         "http://localhost:8081/payments/today-sales"
       );
 
-      console.log(response.data + " umairoooooooooo")
-      // Format the floating-point number to remove the decimal part if it's ".0"
       setTodaySales(response.data);
     } catch (error) {
       console.error("Error fetching today's sales:", error);
     }
   };
-
-  // const fetchMonthlySales = async () => {
-  //   try {
-  //     const response = await axios.get(
-  //       "http://localhost:8081/payments/monthly-sales"
-  //     );
-  //     setMonthlySales(response.data);
-  //   } catch (error) {
-  //     console.error("Error fetching monthly sales:", error);
-  //   }
-  // };
-
 
   const fetchMonthlySales = async () => {
     try {
@@ -86,7 +73,9 @@ const Dashboard = () => {
       const currentYear = new Date().getFullYear();
 
       // Find the sales data for the current year
-      const currentYearSales = response.data.find(([year]) => year === currentYear);
+      const currentYearSales = response.data.find(
+        ([year]) => year === currentYear
+      );
 
       // Extract and set only the sales value
       const [, yearlySalesValue] = currentYearSales || [null, 0];
@@ -190,7 +179,7 @@ const Dashboard = () => {
             fontSize="0.8rem"
             sx={{ color: theme.palette.secondary[200] }}
           >
-            Breakdown of real states and information via category for revenue
+            Breakdown of sales by tests and information via category for revenue
             made for this year and total sales.
           </Typography>
         </Box>

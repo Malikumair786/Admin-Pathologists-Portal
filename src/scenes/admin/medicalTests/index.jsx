@@ -4,7 +4,6 @@ import axios from "axios";
 
 import Header from "component/Header";
 import FlexBetween from "component/FlexBetween";
-// import { useGetTestsQuery } from "state/api";
 import Test from "./Test";
 import AddMedicalTestDialog from "./AddMedicalTestDialog"; // Import the new component
 
@@ -21,7 +20,6 @@ const MedicalTests = () => {
     try {
       const response = await axios.get("http://localhost:8081/api/tests/all");
       setData(response.data);
-      // console.log(response.data);
     } catch (error) {
       console.error("Error fetching tests:", error);
     }

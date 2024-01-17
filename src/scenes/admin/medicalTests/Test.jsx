@@ -12,11 +12,10 @@ import {
   DialogTitle,
 } from "@mui/material";
 import axios from "axios";
-// import TestUpdateDialog from "./TestUpdateDialog";
 import UpdateMedicalTestDialog from "./UpdateMedicalTestDialog";
 
 const Test = ({ _id, name, price, description, category, refetchTests }) => {
-  // console.log(_id);
+
   const theme = useTheme();
   const [confirmDialogOpen, setConfirmDialogOpen] = React.useState(false);
   const [selectedTestId, setSelectedTestId] = React.useState(null);
@@ -25,7 +24,6 @@ const Test = ({ _id, name, price, description, category, refetchTests }) => {
   const [selectedTest, setSelectedTest] = React.useState(null);
 
   const handleConfirmDialogOpen = (TestId) => {
-    // console.log(TestId);
     setSelectedTestId(TestId);
     setConfirmDialogOpen(true);
   };
@@ -36,10 +34,8 @@ const Test = ({ _id, name, price, description, category, refetchTests }) => {
   };
 
   const handleDeleteTest = async (TestId) => {
-    // console.log("Test id: in handle delete test ", TestId);
     try {
       setConfirmDialogOpen(true);
-      // console.log(TestId);
       await axios.delete(`http://localhost:8081/api/tests/delete/${TestId}`);
       setSelectedTestId(null);
       refetchTests();
@@ -49,12 +45,8 @@ const Test = ({ _id, name, price, description, category, refetchTests }) => {
     }
   };
 
-  // const handleUpdateTest = (Test) => {
-  //   setSelectedTest(Test);
-  //   setUpdateDialogOpen(true);
-  // };
+
   const handleUpdateTest = (Test) => {
-    // console.log("handleUpdateTest 1", Test);
     setSelectedTest(Test);
     setUpdateDialogOpen(true);
   };
@@ -106,15 +98,6 @@ const Test = ({ _id, name, price, description, category, refetchTests }) => {
           </Button>
         </CardActions>
 
-        {/* <CardActions>
-          <Button
-            variant="primary"
-            size="small"
-            onClick={() => handleUpdateTest(_id)}
-          >
-            Update
-          </Button>
-        </CardActions> */}
         <CardActions>
           <Button
             variant="primary"

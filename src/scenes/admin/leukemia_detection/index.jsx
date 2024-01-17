@@ -120,7 +120,6 @@ const LeukemiaDetection = () => {
               padding: "10px 20px",
             }}
           >
-            <DownloadOutlined sx={{ mr: "10px" }} />
             Classify
           </Button>
         </Box>
